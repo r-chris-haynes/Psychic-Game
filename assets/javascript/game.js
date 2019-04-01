@@ -27,12 +27,25 @@ var checkUserInput = function(userGuess) {
     }
 }
 
-var winsSlot = document.getElementById('wins-slot');
+var userInput = document.getElementById("userGuess");
 
-var userInput = document.getElementById('userGuess');
-userInput.onkeyup = function(event) {
+var winsSlot = document.getElementById("wins-slot");
+
+var lossesSlot = document.getElementById("losses-slot");
+
+var guessesLeftSlot = document.getElementById("guesses-left-slot");
+
+var soFarSlot = document.getElementById("so-far-slot");
+
+
+    userInput.onkeyup = function(event) {
     var userGuess = event.target.value;  
     checkUserInput(userGuess);
     winsSlot.textContent = wins;
     event.target.value = null;
+    lossesSlot.textContent = losses;
+    guessesLeftSlot.textContent = guessesLeft;
+    soFarSlot.textContent = guessesSoFar; 
 };
+
+
